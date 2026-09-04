@@ -9,6 +9,14 @@
   const RECENT_DAYS = 62;
   const MAX_REVIEWS = 120;
 
+  const DOMESTIC_KEYWORDS = [
+    '현대','기아','제네시스','르노','kgm','kg모빌리티','쉐보레',
+    '포터','봉고','그랜저','아반떼','쏘나타','소나타','싼타페','투싼','팰리세이드','코나','캐스퍼','스타리아','아이오닉',
+    '모닝','레이','k3','k5','k8','k9','카니발','쏘렌토','스포티지','셀토스','니로','ev3','ev4','ev5','ev6','ev9',
+    'g70','g80','g90','gv60','gv70','gv80','토레스','액티언','티볼리','렉스턴','코란도',
+    '아르카나','qm6','그랑 콜레오스','그랑콜레오스','트랙스','트레일블레이저','트래버스'
+  ];
+
   const IMPORT_KEYWORDS = [
     '메르세데스','벤츠','mercedes','e200','e220','e250','e300','e350','e450','s350','s400','s450','s500','s580','a200','a220','a250','c200','c220','c300','gle','glc','gls','cla','cls','cle','gla','glb','amg','마이바흐',
     'bmw','비엠더블유','1시리즈','2시리즈','3시리즈','4시리즈','5시리즈','6시리즈','7시리즈','8시리즈','x1','x2','x3','x4','x5','x6','x7','xm','i4','i5','i7','ix','z4',
@@ -38,7 +46,12 @@
   }
 
   function isImportReview(review) {
-    const haystack = `${review?.brand || ''} ${review?.title || ''} ${review?.model || ''}`.toLowerCase();
+    // 화면에서도 해당 후기의 제목/모델만 먼저 확인해 국산차 오탐을 차단한다.
+    // Actions에서 brand가 잘못 들어오는 비정상 데이터가 있어도 국산차가 노출되지 않도록 하는 안전장치다.
+    const core = `${review?.title || ''} ${review?.model || ''}`.toLowerCase();
+    if (DOMESTIC_KEYWORDS.some(keyword => importKeywordMatches(core, keyword))) return false;
+
+    const haystack = `${review?.brand || ''} ${core}`.toLowerCase();
     return IMPORT_KEYWORDS.some(keyword => importKeywordMatches(haystack, keyword));
   }
 
