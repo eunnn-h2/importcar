@@ -10,29 +10,43 @@ const MAX_DETAIL_SCANS = 300;
 const OUTPUT = path.resolve('data/reviews.json');
 
 const IMPORT_BRANDS = [
-  ['메르세데스-벤츠', ['메르세데스', '벤츠', 'mercedes', 'e200', 'e220', 'e300', 'e450', 's450', 's500', 's580', 'gle', 'glc', 'gls', 'cla', 'cle', 'amg']],
-  ['BMW', ['bmw', '비엠더블유']],
-  ['아우디', ['아우디', 'audi']],
-  ['볼보', ['볼보', 'volvo', 'xc40', 'xc60', 'xc90', 's60', 's90']],
-  ['폭스바겐', ['폭스바겐', 'volkswagen', 'id.4', 'id4', '티구안', '아테온']],
-  ['포르쉐', ['포르쉐', 'porsche', '카이엔', '마칸', '타이칸']],
-  ['랜드로버', ['랜드로버', '레인지로버', 'land rover', 'range rover', '디펜더', '디스커버리']],
-  ['렉서스', ['렉서스', 'lexus']],
-  ['토요타', ['토요타', '도요타', 'toyota']],
-  ['MINI', ['mini', '미니']],
-  ['테슬라', ['테슬라', 'tesla', 'model y', 'model 3', 'model s', 'model x', '모델 y', '모델y', '모델3']],
+  ['메르세데스-벤츠', ['메르세데스', '벤츠', 'mercedes', 'e200', 'e220', 'e250', 'e300', 'e350', 'e450', 's350', 's400', 's450', 's500', 's580', 'a200', 'a220', 'a250', 'c200', 'c220', 'c300', 'gle', 'glc', 'gls', 'cla', 'cls', 'cle', 'gla', 'glb', 'amg', '마이바흐']],
+  ['BMW', ['bmw', '비엠더블유', '1시리즈', '2시리즈', '3시리즈', '4시리즈', '5시리즈', '6시리즈', '7시리즈', '8시리즈', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'xm', 'i4', 'i5', 'i7', 'ix', 'z4']],
+  ['아우디', ['아우디', 'audi', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'e-tron', 'etron', '이트론', '올로드콰트로', '콰트로']],
+  ['볼보', ['볼보', 'volvo', 'ex30', 'ex40', 'ec40', 'xc40', 'xc60', 'xc90', 's60', 's90', 'v60', 'v90']],
+  ['폭스바겐', ['폭스바겐', 'volkswagen', 'id.4', 'id4', 'id.5', 'id5', '티구안', '아테온', '투아렉', '골프', '제타', '파사트']],
+  ['포르쉐', ['포르쉐', 'porsche', '카이엔', '마칸', '타이칸', '파나메라', '911', '718']],
+  ['랜드로버', ['랜드로버', '레인지로버', 'land rover', 'range rover', '디펜더', '디스커버리', '이보크', '벨라']],
+  ['렉서스', ['렉서스', 'lexus', 'es300', 'es300h', 'nx', 'rx', 'ux', 'lm', 'ls']],
+  ['토요타', ['토요타', '도요타', 'toyota', '캠리', '라브4', 'rav4', '크라운', '프리우스', '알파드', '시에나']],
+  ['MINI', ['mini', '미니', '쿠퍼', '컨트리맨', '클럽맨', '에이스맨']],
+  ['테슬라', ['테슬라', 'tesla', 'model y', 'model 3', 'model s', 'model x', '모델 y', '모델y', '모델3', '모델s', '모델x']],
   ['폴스타', ['폴스타', 'polestar']],
-  ['지프', ['지프', 'jeep']],
-  ['포드', ['포드', 'ford', '익스플로러', '브롱코', '머스탱']],
-  ['링컨', ['링컨', 'lincoln']],
-  ['캐딜락', ['캐딜락', 'cadillac']],
-  ['푸조', ['푸조', 'peugeot']],
-  ['마세라티', ['마세라티', 'maserati']],
-  ['람보르기니', ['람보르기니', 'lamborghini']],
-  ['페라리', ['페라리', 'ferrari']],
-  ['벤틀리', ['벤틀리', 'bentley']],
-  ['롤스로이스', ['롤스로이스', 'rolls-royce', 'rolls royce']]
+  ['지프', ['지프', 'jeep', '랭글러', '그랜드체로키', '레니게이드', '글래디에이터']],
+  ['포드', ['포드', 'ford', '익스플로러', '브롱코', '머스탱', '레인저']],
+  ['링컨', ['링컨', 'lincoln', '노틸러스', '에비에이터', '코세어', '네비게이터']],
+  ['캐딜락', ['캐딜락', 'cadillac', '에스컬레이드', 'lyriq', '리릭', 'xt4', 'xt5', 'xt6']],
+  ['푸조', ['푸조', 'peugeot', '2008', '3008', '408', '5008']],
+  ['마세라티', ['마세라티', 'maserati', '그레칼레', '기블리', '르반떼', '콰트로포르테']],
+  ['람보르기니', ['람보르기니', 'lamborghini', '우루스', '우라칸', '레부엘토']],
+  ['페라리', ['페라리', 'ferrari', '로마', '푸로산게']],
+  ['벤틀리', ['벤틀리', 'bentley', '벤테이가', '컨티넨탈', '플라잉스퍼']],
+  ['롤스로이스', ['롤스로이스', 'rolls-royce', 'rolls royce', '컬리넌', '고스트', '팬텀', '스펙터']],
+  ['BYD', ['byd', '비야디', '아토3', 'atto 3', '씰', 'seal', '돌핀', 'dolphin']]
 ];
+
+function keywordMatches(haystack, keyword) {
+  const needle = String(keyword || '').trim().toLowerCase();
+  if (!needle) return false;
+
+  // A6, Q7, X5처럼 짧은 영문+숫자 모델명은 다른 문자열 일부가 아니라 독립 토큰일 때만 인정한다.
+  if (/^[a-z]{1,3}\d{1,3}$/i.test(needle)) {
+    const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`, 'i').test(haystack);
+  }
+
+  return haystack.includes(needle);
+}
 
 const DOMESTIC_TERMS = [
   '현대', '기아', '제네시스', '르노', 'kgm', 'kg모빌리티', '쉐보레',
@@ -68,9 +82,11 @@ function labelValue(text, label) {
 function detectImportBrand(title = '', model = '') {
   const haystack = clean(`${title} ${model}`).toLowerCase();
   if (!haystack) return '';
-  if (DOMESTIC_TERMS.some(term => haystack.includes(term.toLowerCase()))) return '';
+
+  // 수입차 브랜드명 또는 차량명 중 하나라도 일치하면 수입차로 인정한다.
+  // 국내차 키워드가 함께 있어도 수입차 키워드가 확인되면 우선 포함한다.
   for (const [label, keywords] of IMPORT_BRANDS) {
-    if (keywords.some(keyword => haystack.includes(keyword.toLowerCase()))) return label;
+    if (keywords.some(keyword => keywordMatches(haystack, keyword))) return label;
   }
   return '';
 }
