@@ -6,7 +6,7 @@
 
   const SWIPER_DELAY = 2200;
   const SWIPER_SPEED = 1000;
-  const RECENT_DAYS = 62;
+  const RECENT_DAYS = 93;
   const MAX_REVIEWS = 120;
 
   const DOMESTIC_KEYWORDS = [
