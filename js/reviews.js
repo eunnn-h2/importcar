@@ -154,9 +154,9 @@
       spaceBetween: 14,
       slidesOffsetBefore: 26,
       slidesOffsetAfter: 26,
-      loop: false,
-      rewind: true,
-      loopAdditionalSlides: 0,
+      loop: true,
+      rewind: false,
+      loopAdditionalSlides: Math.min(6, renderedReviews.length),
       loopPreventsSliding: false,
       speed: SWIPER_SPEED,
       grabCursor: true,
@@ -187,6 +187,25 @@
         821: { spaceBetween: 14, slidesOffsetBefore: 26, slidesOffsetAfter: 26 }
       }
     });
+
+    reviewSwiper.autoplay?.stop?.();
+
+    // 항상 최신 후기(첫 카드)에서 시작한다.
+    reviewSwiper.slideToLoop?.(0, 0, false);
+
+    // 랜딩 로더가 사라진 뒤에만 자동재생을 시작한다.
+    const startAutoplayWhenReady = () => {
+      const loader = document.getElementById('landingLoader');
+      const loaderVisible = loader && loader.getAttribute('aria-hidden') !== 'true';
+      if (loaderVisible) {
+        window.setTimeout(startAutoplayWhenReady, 120);
+        return;
+      }
+      reviewSwiper?.slideToLoop?.(0, 0, false);
+      reviewSwiper?.autoplay?.start?.();
+    };
+
+    startAutoplayWhenReady();
   }
 
   function bindImageFallbacks() {
