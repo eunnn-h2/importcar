@@ -3,7 +3,7 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 
 const SOURCE = 'https://www.agautoplan.com/review';
-const RECENT_DAYS = 62;
+const RECENT_DAYS = 93;
 const MAX_PAGES = 30;
 const MAX_REVIEWS = 300;
 const OUTPUT = path.resolve('data/reviews.json');
