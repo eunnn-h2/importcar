@@ -1,10 +1,10 @@
 {
   "source": "https://www.agautoplan.com/review",
-  "generatedAt": "2026-10-01T06:28:31.343Z",
+  "generatedAt": "2026-10-05T06:09:13.946Z",
   "filter": "latest-62-days-import-cars-only",
   "recentDays": 93,
   "order": "board-visible-order-newest-first",
-  "count": 20,
+  "count": 16,
   "reviews": [
     {
       "id": "174566230",
@@ -12,8 +12,8 @@
       "brand": "BMW",
       "model": "i5 eDrive 40 M Spt_P2",
       "manager": "정철희 차장 ❤️❤️",
-      "color": "",
-      "method": "",
+      "color": "(외장) 카본블랙 / (내장) 스모크화이트",
+      "method": "개인 / 리스",
       "date": "2026-09-18",
       "image": "https://cdn.imweb.me/thumbnail/20260921/4885498120f6f.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=174566230&t=board",
@@ -213,58 +213,6 @@
       "image": "https://cdn.imweb.me/thumbnail/20260709/761c8e14062ce.jpg",
       "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6ODt9&bmode=view&idx=172309152&t=board",
       "sourceOrder": 92
-    },
-    {
-      "id": "172230644",
-      "title": "카이엔 쿠페 법인 리스 출고 후기입니다.",
-      "brand": "포르쉐",
-      "model": "카이엔 쿠페",
-      "manager": "박지석 팀장 ❤️❤️",
-      "color": "(외장) 크레용 / (내장) 레드",
-      "method": "법인 / 리스",
-      "date": "2026-07-03",
-      "image": "https://cdn.imweb.me/thumbnail/20260706/e7a5ef0c8a358.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=172230644&t=board",
-      "sourceOrder": 97
-    },
-    {
-      "id": "172230642",
-      "title": "E300 법인사업자 리스 출고 후기입니다.",
-      "brand": "메르세데스-벤츠",
-      "model": "벤츠 E300 익스클루시브",
-      "manager": "황대호 차장 ❤️❤️",
-      "color": "(외장) 화이트 / (내장) 브라운",
-      "method": "법인사업자 / 리스",
-      "date": "2026-07-03",
-      "image": "https://cdn.imweb.me/thumbnail/20260706/5ecd3f0c6f60e.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=172230642&t=board",
-      "sourceOrder": 99
-    },
-    {
-      "id": "172230641",
-      "title": "돌핀 개인 리스 출고 후기입니다.",
-      "brand": "BYD",
-      "model": "색상 : (외장) 화이트 / (내장) 블랙",
-      "manager": "황대호 차장 ❤️❤️",
-      "color": "(외장) 화이트 / (내장) 블랙",
-      "method": "개인 / 리스",
-      "date": "2026-07-03",
-      "image": "https://cdn.imweb.me/thumbnail/20260706/b13e2bf453b4c.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=172230641&t=board",
-      "sourceOrder": 100
-    },
-    {
-      "id": "172150868",
-      "title": "테슬라 모델 Y 개인 리스 출고 후기입니다.",
-      "brand": "테슬라",
-      "model": "테슬라 모델 Y",
-      "manager": "김진욱 차장 ❤️❤️",
-      "color": "(외장) 그레이 / (내장) 블랙",
-      "method": "개인 / 리스",
-      "date": "2026-07-01",
-      "image": "https://cdn.imweb.me/thumbnail/20260702/dfbb37c1458ea.jpg",
-      "url": "https://www.agautoplan.com/review/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjQ6InBhZ2UiO2k6OTt9&bmode=view&idx=172150868&t=board",
-      "sourceOrder": 102
     }
   ]
 }
