@@ -9620,9 +9620,9 @@ body.review-dialog-open {
     color: #df1920;
     font-weight: 800;
 }
-@media (max-width: 359px) {
+@media (max-width: 767px) {
     .wizard-event-banner__benefits {
-        font-size: 10px;
-        gap: 4px;
+        gap: 15px;
+        font-size: 11.5px;
     }
 }
